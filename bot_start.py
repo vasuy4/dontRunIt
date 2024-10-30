@@ -6,6 +6,7 @@ from utils.set_bot_commands import set_default_commands
 from telebot.types import Message
 import os
 
+from camera_recording import main
 
 @bot.message_handler(commands=["get"])
 def bot_get(message: Message):
@@ -29,7 +30,8 @@ def bot_start(message: Message):
 
 
 if __name__ == "__main__":
-    subprocess.run(['python', 'camera_recording.py'], creationflags=subprocess.CREATE_NO_WINDOW)  # creationflags=subprocess.CREATE_NO_WINDOW
+    # subprocess.run(['python', 'camera_recording.py'], creationflags=subprocess.CREATE_NO_WINDOW)  # creationflags=subprocess.CREATE_NO_WINDOW
+    main()
     print("bot started")
 
     set_default_commands(bot)
