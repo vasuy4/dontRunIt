@@ -18,7 +18,7 @@ def bot_get(message: Message):
     except:
         pass
 
-    # bot.stop_polling()
+    bot.stop_polling()
 
 
 @bot.message_handler(commands=["start"])
@@ -28,9 +28,8 @@ def bot_start(message: Message):
     bot.reply_to(message, "Здарова")
 
 
-
 if __name__ == "__main__":
-    # subprocess.run(['python', 'camera_recording.py'])  # creationflags=subprocess.CREATE_NO_WINDOW
+    subprocess.run(['python', 'camera_recording.py'], creationflags=subprocess.CREATE_NO_WINDOW)  # creationflags=subprocess.CREATE_NO_WINDOW
     print("bot started")
 
     set_default_commands(bot)
